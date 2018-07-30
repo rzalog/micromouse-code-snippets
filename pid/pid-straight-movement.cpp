@@ -13,9 +13,9 @@ void update_motor_pwm() {
 	pwm_w = KpW * w_error + KdW * (w_error - w_error_old) * dt;
 	
 	w_error_old = w_error;
-	
-	// Don't go too fast!
-	adjust_pwm(&pwm_w);
+
+	// We do this because we have not implemented the X controller yet
+	pwm_x = BASE_SPEED;
 	
 	motors.set_right_pwm(pwm_x + pwm_w);
 	motors.set_left_pwm(pwm_x - pwm_w);
