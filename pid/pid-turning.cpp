@@ -14,19 +14,18 @@ void update_motor_pwm() {
 	
 	w_error_old = w_error;
 
-    adjust_pwm(&pwm_w);
+	adjust_pwm(&pwm_w);
 
 	// We do this because we have not implemented the X controller yet
 	pwm_x = BASE_SPEED;
-  
-    if (too_slow(pwm_w)) {
-    	if (has_been_going_slow_for_too_long()) {
+
+	if (too_slow(pwm_w)) {
+		if (has_been_going_slow_for_too_long()) {
 			finish_pid();
 		}
 	}
 	else {
-        // notice the change in sign!
-        motors.set_right_pwm(pwm_x + pwm_w);
-        motors.set_left_pwm(pwm_x - pwm_w);
+		motors.set_right_pwm(pwm_x + pwm_w);
+		motors.set_left_pwm(pwm_x - pwm_w);
 	}
 }
