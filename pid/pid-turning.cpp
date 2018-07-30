@@ -21,9 +21,9 @@ void update_motor_pwm() {
 	pwm_x = x_controller();
 	pwm_w = w_controller();
 
-	adjust
+	adjust_pwms(&pwm_x, &pwm_w);
 
-	if (too_slow(pwm_w)) {
+	if (too_slow(pwm_x, pwm_w)) {
 		if (has_been_going_slow_for_too_long()) {
 			finish_pid();
 		}

@@ -2,7 +2,7 @@
 // variables, don't lose track of them!
 
 void get_sensor_feedback() {
-	// cache to avoid race conditions ;) (thanks CS33)
+	// Do not want these values changing in between calculations
 	int right = encoders.right();
 	int left = encoders.left();
 	
