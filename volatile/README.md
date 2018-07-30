@@ -9,5 +9,4 @@ Files included:
 
 Fun notes about `volatile`:
 * If in doubt, use `volatile` for anything that interacts with systick. At worst, it makes your mouse program run slower, at best it fixes extremely hard to catch problems.
-* As it applies to member functions (see `v_class`):
-    - If your instance of a class is declared volatile (e.g., `volatile V_Class v_instance`), it can _only_ use member functions declared `volatile`. So
+* If your instance of a class is declared volatile (e.g., `volatile V_Class v_instance`), it can _only_ use member functions declared `volatile`.
