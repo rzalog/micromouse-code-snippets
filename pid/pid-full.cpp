@@ -25,8 +25,8 @@ void update_motor_pwm() {
 	// Don't go too fast!
 	adjust_pwms(&pwm_x, &pwm_w);
 	
-    // DO THIS LAST! After everything else works,
-    // put this in to "finish" the PID
+    	// DO THIS LAST! After everything else works,
+    	// put this in to "finish" the PID
 	if (too_slow(pwm_x, pwm_w)) {
 		if (has_been_going_slow_for_too_long()) {
 			finish_pid();
